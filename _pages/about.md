@@ -20,6 +20,6 @@ Hey! I'm Teo, a DPhil student at Oxford working with [Professor Michael Bronstei
 
 
 
-But my true passion? Pure math! I was a counsellor at [PROMYS](https://promys-europe.org/) teaching Number Theory and Group Theory to IMO-level students—basically living my best life! 
+But my true passion? Pure math! I was a counsellor at [PROMYS](https://promys-europe.org/) teaching Number Theory and Group Theory to IMO-level students, basically living my best life! 
 
 Oh, and when I'm not doing math or ML, I paint! Check out my [art portfolio](/art/) for oils and watercolors. 
