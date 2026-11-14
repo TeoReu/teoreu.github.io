@@ -27,6 +27,8 @@ $accent-pink:         #C2458F !default; // links, light mode
 $accent-pink-soft:    #D362A4 !default; // links, dark mode
 $accent-orange:       #D9480F !default; // hover, light mode
 $accent-orange-soft:  #FF9A56 !default; // hover, dark mode
+$accent-pink-dark:    #A30262 !default; // name gradient start, light mode
+$accent-pink-light:   #F7B8DC !default; // name gradient end, dark mode
 
 $grey-color:          #828282 !default;
 $grey-color-light:    lighten($grey-color, 40%);

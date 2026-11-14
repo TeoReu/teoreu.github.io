@@ -220,12 +220,17 @@ blockquote {
   opacity: 0.95;
 }
 
-// Name colours (navbar brand + about page title)
-.name-first {
-  color: var(--global-hover-color); // orange
-}
-.name-last {
-  color: var(--global-theme-color); // pink
+// Name in a dark-to-light pink gradient (navbar brand + about page title)
+.name-gradient {
+  background-image: linear-gradient(
+    90deg,
+    var(--global-name-gradient-start),
+    var(--global-name-gradient-end)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .navbar .dropdown-menu {

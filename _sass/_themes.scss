@@ -9,6 +9,8 @@
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$accent-pink};
   --global-hover-color: #{$accent-orange};
+  --global-name-gradient-start: #{$accent-pink-dark};
+  --global-name-gradient-end: #{$accent-pink-soft};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
@@ -54,6 +56,8 @@ html[data-theme='dark'] {
   --global-text-color-light: #{$grey-color-light};
   --global-theme-color: #{$accent-pink-soft};
   --global-hover-color: #{$accent-orange-soft};
+  --global-name-gradient-start: #{$accent-pink};
+  --global-name-gradient-end: #{$accent-pink-light};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-light};
   --global-footer-text-color: #{$grey-color-dark};
