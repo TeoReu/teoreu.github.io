@@ -336,6 +336,17 @@ html[data-theme='dark'] .art-frame-0 {
   font-size: 0.85rem;
 }
 
+// In art mode the side column gets tall: let the publications flow up beside
+// the paintings instead of waiting below them (which left a big empty gap)
+.profile.show-alt + .clearfix::after {
+  display: none;
+}
+.post > article::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @keyframes art-hang {
   from { opacity: 0; transform: translateY(-16px) rotate(var(--tilt)); }
   to   { opacity: 1; transform: rotate(var(--tilt)); }
