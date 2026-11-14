@@ -23,11 +23,42 @@ layout: default
                 {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
               {% endif %}
 
+              <div class="profile-image-main">
               {% include figure.html
               path=profile_image_path
               class=profile_image_class
               alt=page.profile.image
               cache_bust=true -%}
+              </div>
+
+              {%- if page.profile.image_alt %}
+              {%- assign profile_image_alt_path = page.profile.image_alt | prepend: 'assets/img/' -%}
+              <div class="profile-image-alt">
+              {% include figure.html
+              path=profile_image_alt_path
+              class=profile_image_class
+              alt=page.profile.image_alt
+              cache_bust=true -%}
+              </div>
+              {%- assign swap_label = page.profile.swap_label | default: "✨" -%}
+              {%- assign swap_label_back = page.profile.swap_label_back | default: swap_label %}
+              <button type="button" class="profile-swap-btn" aria-pressed="false"
+                data-label-off="{{ swap_label }}" data-label-on="{{ swap_label_back }}">{{ swap_label }}</button>
+              <script>
+                (function () {
+                  var buttons = document.querySelectorAll(".profile-swap-btn");
+                  for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].addEventListener("click", function () {
+                      var profile = this.closest(".profile");
+                      var on = profile.classList.toggle("show-alt");
+                      profile.classList.add("swapped");
+                      this.setAttribute("aria-pressed", on ? "true" : "false");
+                      this.textContent = on ? this.getAttribute("data-label-on") : this.getAttribute("data-label-off");
+                    });
+                  }
+                })();
+              </script>
+              {%- endif %}
             {% endif -%}
             {%- if page.profile.more_info %}
             <div class="more-info">
