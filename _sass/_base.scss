@@ -259,6 +259,94 @@ blockquote {
   }
 }
 
+// Art mode: small framed paintings hung under the profile picture
+.art-wall {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem 0.9rem;
+  margin: 1.6rem 0 0.75rem;
+}
+
+.profile.show-alt .art-wall {
+  display: flex;
+}
+
+.art-frame {
+  --tilt: 0deg;
+  flex: 0 0 calc(50% - 0.45rem);
+  margin: 0;
+  padding: 5px; // the mat
+  background: #f8f5ee;
+  border: 6px solid #5a3a1e;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.12),
+    0 6px 14px rgba(0, 0, 0, 0.28),
+    0 1px 2px rgba(0, 0, 0, 0.25);
+  transform: rotate(var(--tilt));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: art-hang 0.55s cubic-bezier(0.2, 0.8, 0.3, 1.15) backwards;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: zoom-in;
+  }
+
+  &:hover {
+    transform: rotate(0deg) scale(1.06);
+    box-shadow:
+      inset 0 0 0 1px rgba(0, 0, 0, 0.12),
+      0 10px 22px rgba(0, 0, 0, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+  }
+
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{($i - 1) * 70}ms;
+    }
+  }
+}
+
+// three frame styles, cycling
+.art-frame-1 { // gilded
+  --tilt: -2deg;
+  border-image: linear-gradient(135deg, #f3d98b, #b8893b 30%, #f7e3a1 50%, #8a6420 75%, #e2c271) 1;
+}
+.art-frame-2 { // walnut
+  --tilt: 1.5deg;
+  border-image: linear-gradient(135deg, #7a5230, #4a2e15 40%, #6b4423 70%, #3d2410) 1;
+}
+.art-frame-0 { // thin black
+  --tilt: -0.8deg;
+  border-width: 4px;
+  border-color: #1f1f1f;
+}
+html[data-theme='dark'] .art-frame-0 {
+  border-color: #4a4a4a; // charcoal, so it doesn't vanish into the dark page
+}
+
+.art-wall-link {
+  flex: 0 0 100%;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+@keyframes art-hang {
+  from { opacity: 0; transform: translateY(-16px) rotate(var(--tilt)); }
+  to   { opacity: 1; transform: rotate(var(--tilt)); }
+}
+
+@media (max-width: 575px) {
+  .art-frame {
+    flex-basis: calc(33.333% - 0.6rem);
+  }
+}
+
 @media (min-width: 576px) {
   .profile {
     width: 30%;

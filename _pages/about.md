@@ -13,6 +13,22 @@ profile:
   swap_label_back: "📷"      # shown on the painting: press to go back
   swap_hint: "see my painting"
   swap_hint_back: "back to the photo"
+  art_wall:                  # small framed paintings that appear in art mode (click to enlarge)
+    - image: art/oil_terrace.jpg
+      alt: oil painting of a terrace by the sea
+    - image: art/watercolour_houses.jpg
+      alt: watercolour of colourful houses
+    - image: art/oil_still_life.jpg
+      alt: oil still life with a gold pitcher
+    - image: art/watercolour_mountains.jpg
+      alt: watercolour of mountains
+    - image: art/oil_blue_dog.jpg
+      alt: surreal oil painting with a blue dog
+    - image: art/oil_flowers.jpg
+      alt: oil painting of a flower bouquet
+    - image: art/watercolour_door.jpg
+      alt: watercolour of a yellow wall with a red door
+  art_wall_link: /art/
   image_circular: true # crops the image to make it circular
 
 news: false # includes a list of news items

@@ -69,6 +69,19 @@ layout: default
               {%- endif %}
               </div>
             {% endif -%}
+            {%- if page.profile.art_wall %}
+            <!-- Small framed paintings, shown in art mode -->
+            <div class="art-wall">
+              {%- for art in page.profile.art_wall %}
+              <figure class="art-frame art-frame-{{ forloop.index | modulo: 3 }}">
+                <img src="{{ art.image | prepend: 'assets/img/' | relative_url }}" alt="{{ art.alt }}" loading="lazy" data-zoomable>
+              </figure>
+              {%- endfor %}
+              {%- if page.profile.art_wall_link %}
+              <a class="art-wall-link" href="{{ page.profile.art_wall_link | relative_url }}">more paintings →</a>
+              {%- endif %}
+            </div>
+            {%- endif %}
             {%- if page.profile.more_info %}
             <div class="more-info">
               {{ page.profile.more_info }}
