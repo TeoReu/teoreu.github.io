@@ -7,8 +7,8 @@ subtitle: DPhil in Computer Science at University of Oxford
 
 profile:
   align: right
-  image: prof_pic.jpeg
-  image_alt: prof_art.jpg   # shown when the button under the photo is pressed
+  image: prof_pic_2026.jpg
+  image_alt: prof_art.jpg   # shown when the badge on the photo is pressed
   swap_label: "🖌️"           # shown on the photo: press to see the painting
   swap_label_back: "📷"      # shown on the painting: press to go back
   swap_hint: "see my painting"
