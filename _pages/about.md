@@ -9,8 +9,10 @@ profile:
   align: right
   image: prof_pic.jpeg
   image_alt: prof_art.jpg   # shown when the button under the photo is pressed
-  swap_label: "🎨 art mode"
-  swap_label_back: "📚 research mode"
+  swap_label: "🖌️"           # shown on the photo: press to see the painting
+  swap_label_back: "📷"      # shown on the painting: press to go back
+  swap_hint: "see my painting"
+  swap_hint_back: "back to the photo"
   image_circular: true # crops the image to make it circular
 
 news: false # includes a list of news items

@@ -214,27 +214,43 @@ blockquote {
   to   { opacity: 1; transform: none; }
 }
 
+// Wrapper so the badge can sit on the photo's edge
+.profile-photo {
+  position: relative;
+
+  img {
+    display: block;
+  }
+}
+
+// Round badge on the bottom-right edge of the circular photo,
+// with a thin orange -> pink gradient ring
 .profile-swap-btn {
-  display: block;
-  margin: 0.75rem auto 0.5rem;
-  padding: 0.3rem 1rem;
-  border: none;
-  border-radius: 999px;
-  background-image: linear-gradient(
-    90deg,
-    var(--global-hover-color),
-    var(--global-theme-color)
-  );
-  color: var(--global-bg-color); // white text in light mode, dark text in dark mode
-  font-size: 0.85rem;
-  font-weight: 600;
+  $size: 2.6rem;
+  position: absolute;
+  // 14.6% = where the circle's edge is at 45 degrees (1 - cos 45deg) / 2
+  right: calc(14.6% - #{$size} / 2);
+  bottom: calc(14.6% - #{$size} / 2);
+  width: $size;
+  height: $size;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--global-bg-color), var(--global-bg-color)) padding-box,
+    linear-gradient(135deg, var(--global-hover-color), var(--global-theme-color)) border-box;
+  font-size: 1.15rem;
+  line-height: 1;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 
   &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   &:focus-visible {

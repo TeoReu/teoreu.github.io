@@ -23,6 +23,7 @@ layout: default
                 {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
               {% endif %}
 
+              <div class="profile-photo">
               <div class="profile-image-main">
               {% include figure.html
               path=profile_image_path
@@ -41,9 +42,13 @@ layout: default
               cache_bust=true -%}
               </div>
               {%- assign swap_label = page.profile.swap_label | default: "✨" -%}
-              {%- assign swap_label_back = page.profile.swap_label_back | default: swap_label %}
+              {%- assign swap_label_back = page.profile.swap_label_back | default: swap_label -%}
+              {%- assign swap_hint = page.profile.swap_hint | default: "swap picture" -%}
+              {%- assign swap_hint_back = page.profile.swap_hint_back | default: swap_hint %}
               <button type="button" class="profile-swap-btn" aria-pressed="false"
-                data-label-off="{{ swap_label }}" data-label-on="{{ swap_label_back }}">{{ swap_label }}</button>
+                title="{{ swap_hint }}" aria-label="{{ swap_hint }}"
+                data-label-off="{{ swap_label }}" data-label-on="{{ swap_label_back }}"
+                data-hint-off="{{ swap_hint }}" data-hint-on="{{ swap_hint_back }}">{{ swap_label }}</button>
               <script>
                 (function () {
                   var buttons = document.querySelectorAll(".profile-swap-btn");
@@ -54,11 +59,15 @@ layout: default
                       profile.classList.add("swapped");
                       this.setAttribute("aria-pressed", on ? "true" : "false");
                       this.textContent = on ? this.getAttribute("data-label-on") : this.getAttribute("data-label-off");
+                      var hint = on ? this.getAttribute("data-hint-on") : this.getAttribute("data-hint-off");
+                      this.setAttribute("title", hint);
+                      this.setAttribute("aria-label", hint);
                     });
                   }
                 })();
               </script>
               {%- endif %}
+              </div>
             {% endif -%}
             {%- if page.profile.more_info %}
             <div class="more-info">
