@@ -8,7 +8,7 @@ subtitle: DPhil in Computer Science at University of Oxford
 profile:
   align: right
   image: prof_pic.jpeg
-  image_alt: prof_pic_2026.jpg   # shown when the button under the photo is pressed
+  image_alt: prof_art.jpg   # shown when the button under the photo is pressed
   swap_label: "🎨 art mode"
   swap_label_back: "📚 research mode"
   image_circular: true # crops the image to make it circular
