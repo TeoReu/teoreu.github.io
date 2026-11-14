@@ -7,7 +7,7 @@ subtitle: DPhil in Computer Science at University of Oxford
 
 profile:
   align: right
-  image: prof_pic.jpeg
+  image: prof_pic_2026.jpg
   image_circular: true # crops the image to make it circular
 
 news: false # includes a list of news items
