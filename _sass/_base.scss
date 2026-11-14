@@ -220,6 +220,14 @@ blockquote {
   opacity: 0.95;
 }
 
+// Name colours (navbar brand + about page title)
+.name-first {
+  color: var(--global-hover-color); // orange
+}
+.name-last {
+  color: var(--global-theme-color); // pink
+}
+
 .navbar .dropdown-menu {
   background-color: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
